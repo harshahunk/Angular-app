@@ -1,0 +1,38 @@
+       <p></p> <div class="btn-group" dropdown is-open="status.isopen">
+          <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">{{user.location}}
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="loc in locations"><a href="#" ng-click="updateLocation($index)">{{loc}}</a></li>
+            
+          </ul>
+        </div>
+<p></p>
+<label>Departure Date</label>
+       <div class="row">
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="user.depdate" is-open="datepickers.dt1" 
+                     min-date="minDate"
+                     max-date="'2025-06-22'" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event,'dt1')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+<label>Return Date</label>
+<div class="row">
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="user.retdate" is-open="datepickers.dt2" min-date="user.depdate" 
+                     max-date="'2026-06-22'" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event,'dt2')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
+
+
+        <input type="button" name="Prev" value="Prev" class="btn btn-lg bg-primary" ng-click="prevtab2()">
+        <input type="button" name="Next" value="Next" class="btn btn-lg bg-primary" ng-click="nexttab2(user)" ng-disabled="invalidate">
