@@ -12,7 +12,7 @@ $scope.buttonvalidatemaster={
   retdate:false,
 }
 $scope.locations = ["Boston","New York","Chicago","San Francisco"];
-$scope.status = { isopen:true };
+$scope.status = { isopen:false };
 $scope.tabs = angular.copy($scope.tabsmaster);
 $scope.user = angular.copy($scope.usermaster);
 $scope.buttonvalidate = angular.copy($scope.buttonvalidatemaster);
@@ -31,7 +31,7 @@ $scope.datepickers = {
 $scope.open = function($event,opened) {
     $event.preventDefault();
     $event.stopPropagation();
-    $scope.datepickers[opened] =true;
+    $scope.datepickers[opened] = true;
 };
 
 //Page 2 Updation 
